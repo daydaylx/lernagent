@@ -1,0 +1,32 @@
+# Local Claude memory/settings
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Secrets
+.env
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+
+# Python future artifacts
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Build/cache
+dist/
+build/
+coverage/
+.repo_tutor/
+
+# Editor/OS
+.idea/
+.vscode/
+.DS_Store

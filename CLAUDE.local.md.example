@@ -1,0 +1,13 @@
+# CLAUDE.local.md.example
+
+Kopiere diese Datei bei Bedarf zu `CLAUDE.local.md`.
+
+Diese Datei ist für private lokale Notizen gedacht und gehört nicht ins Git.
+
+## Lokale Notizen
+
+- Lokaler Projektpfad:
+- Python-Version:
+- Bevorzugtes Modell:
+- Private Pfade:
+- Was Claude lokal nicht anfassen soll:

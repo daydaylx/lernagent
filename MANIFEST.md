@@ -15,13 +15,16 @@ Agenten-Setup für Claude Code.
 - .claude/hooks/README.md
 - docs/
 - prompts/
+- main.py (Scaffold, CLI-Einstieg)
+- app/ (7 Stub-Module: config, scanner, cache, indexer, explainer, ai_client, ui)
+- tests/ (Importierbarkeits- und CLI-Tests)
+- pyproject.toml, requirements.txt, config.yaml.example
 
 ## Enthält nicht
 
-- keine App
-- kein main.py
-- kein app/
-- keine Tests
-- kein funktionierendes Tool
+- kein funktionsfähiges Tool
+- keine Scanner-/Cache-/Indexer-Implementierung
+- keine Textual UI
+- keine LLM-Anbindung
 
-Das ist Absicht.
+Das ist Absicht. Phase 1 ist Scaffold, nicht Funktionalität.

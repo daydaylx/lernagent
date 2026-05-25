@@ -3,6 +3,7 @@
 ## Gate 0 – Agenten-Setup
 
 Bestanden, wenn:
+
 - CLAUDE.md existiert
 - AGENTS.md existiert
 - `.claude/settings.json` existiert
@@ -14,16 +15,18 @@ Bestanden, wenn:
 
 ## Gate 1 – Erster Scaffold
 
-Später bestanden, wenn:
-- Python-Projektstruktur existiert
-- `python main.py --help` funktioniert oder bewusst begründet noch nicht existiert
-- Tests existieren
-- `pytest -q` läuft
-- `ruff check .` läuft
+Bestanden (Phase 1, 2026-05-25):
+
+- Python-Projektstruktur existiert (`main.py`, `app/`, `tests/`)
+- `python main.py --help` → Exit 0, "RepoTutor" in Ausgabe
+- Tests existieren (`test_scaffold_imports.py`, `test_main_cli.py`)
+- `pytest -q` → 2 passed
+- `ruff check .` → All checks passed
 
 ## Gate 2 – Core
 
 Später bestanden, wenn:
+
 - Scanner testbar
 - Cache testbar
 - Indexer testbar

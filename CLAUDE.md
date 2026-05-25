@@ -4,7 +4,11 @@
 
 ## Aktueller Zustand
 
-Dieses Repo ist ein Agenten-Setup. Es enthält noch keine App-Implementierung.
+Phase 0–4 sind abgeschlossen.
+
+Vorhanden: `main.py`, `app/scanner.py`, `app/cache.py`, `app/indexer.py`, `app/explainer.py`, `app/config.py`, `app/ai_client.py`, `tests/`, `prompts/`.
+Nicht vorhanden: keine UI, kein main.py-Integration, kein YAML-Config-Parsing.
+Nächste Phase: Phase 5 – Textual TUI (nur nach explizitem Go).
 
 Wenn du Code erzeugst, darf das nur nach explizitem Go für eine konkrete Phase passieren.
 
@@ -27,6 +31,7 @@ Beim Start einer neuen Session:
 Später soll z.ai GLM Coding Plan mit `glm-5.1` genutzt werden.
 
 Aber:
+
 - Keine echte LLM-Anbindung in Phase 1.
 - Keine OpenRouter-Integration als Default.
 - Provider-Logik erst nach Core, Indexer und Prompt-Builder.

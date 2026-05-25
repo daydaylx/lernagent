@@ -15,7 +15,11 @@ Es enthält keine App-Implementierung. Ziel ist, Claude Code vor dem ersten echt
 
 ## Status
 
-Noch kein Tool. Noch kein Code. Noch kein Prototyp.
+Phase 0 – Agenten-Setup: abgeschlossen.
+Phase 1 – Python-Scaffold: abgeschlossen.
+
+Vorhandenes: `main.py`, `app/` (7 Stub-Module), `tests/`, `pyproject.toml`, `requirements.txt`.
+Nicht vorhanden: kein funktionsfähiges Tool, keine Scanner-/Indexer-Logik, keine UI, keine LLM-Anbindung.
 
 ## Ziel des späteren Projekts
 

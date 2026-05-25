@@ -1,0 +1,5 @@
+model_provider: zai_coding_plan
+model: glm-5.1
+base_url: https://api.z.ai/api/coding/paas/v4
+api_key_env: ZAI_API_KEY
+stream: true

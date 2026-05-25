@@ -1,5 +1,7 @@
 # Phase 01 – Vom Agenten-Setup zum Python-Scaffold
 
+**Status: abgeschlossen (2026-05-25)**
+
 ## Ziel
 
 Erzeuge die erste minimale Python-Projektstruktur.

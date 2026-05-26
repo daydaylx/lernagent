@@ -1,6 +1,10 @@
 [project]
-name = "repotutour"
+name = "repotutor"
 requires-python = ">=3.11"
+dependencies = [
+    "textual>=7.0",
+    "httpx>=0.24",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

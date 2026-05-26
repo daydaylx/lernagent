@@ -1,6 +1,7 @@
 import inspect
 from unittest.mock import MagicMock, patch
 
+import httpx
 import pytest
 
 from app.ai_client import _parse_sse_line, stream_response
@@ -97,3 +98,31 @@ def test_default_config_values() -> None:
     assert DEFAULT_CONFIG.base_url == "https://api.z.ai/api/coding/paas/v4"
     assert DEFAULT_CONFIG.api_key_env == "ZAI_API_KEY"
     assert DEFAULT_CONFIG.stream is True
+
+
+def test_stream_raises_on_http_error(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("ZAI_API_KEY", "test-key")
+    mock_resp = MagicMock()
+    mock_resp.raise_for_status.side_effect = httpx.HTTPStatusError(
+        "401 Unauthorized", request=MagicMock(), response=MagicMock()
+    )
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    mock_client = MagicMock()
+    mock_client.stream.return_value = mock_resp
+    mock_client.__enter__ = lambda s: s
+    mock_client.__exit__ = MagicMock(return_value=False)
+    with patch("app.ai_client.httpx.Client", return_value=mock_client):
+        with pytest.raises(httpx.HTTPStatusError):
+            list(stream_response("Prompt", _cfg()))
+
+
+def test_stream_raises_on_timeout(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("ZAI_API_KEY", "test-key")
+    mock_client = MagicMock()
+    mock_client.__enter__ = lambda s: s
+    mock_client.__exit__ = MagicMock(return_value=False)
+    mock_client.stream.side_effect = httpx.TimeoutException("Timeout")
+    with patch("app.ai_client.httpx.Client", return_value=mock_client):
+        with pytest.raises(httpx.TimeoutException):
+            list(stream_response("Prompt", _cfg()))

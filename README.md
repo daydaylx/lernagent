@@ -1,17 +1,8 @@
 # Lernagent / RepoTutor Agent Setup
 
-Dieses Repository ist zunächst **nur eine Vorbereitung für Claude Code**.
+RepoTutor ist ein privates lokales Lernwerkzeug in Entwicklung – kein fertiges Endnutzer-Tool.
 
-Es enthält keine App-Implementierung. Ziel ist, Claude Code vor dem ersten echten Build sauber zu steuern:
-
-- klare Projektabsicht
-- harte Scope-Grenzen
-- Phasenverträge
-- Review-Regeln
-- konkrete Verifikationskriterien
-- Sicherheitsregeln
-- wiederverwendbare Skills
-- optionaler Review-Subagent
+Die Core-Implementierungen aus Phase 1–4 sind vorhanden: Scanner, Cache, Indexer, Explainer, z.ai-Streaming-Client und Tests. Noch nicht vorhanden sind Textual UI, vollständiger `main.py`-Nutzerflow und YAML-Config-Parsing. Phase 5 darf erst nach dem UI-Decision-Gate beginnen (siehe `docs/phases/phase_05_tui.md`).
 
 ## Status
 

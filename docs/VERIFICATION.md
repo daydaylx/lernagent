@@ -90,6 +90,8 @@ Geprüft:
 - SSE-Zeilenparser: content extrahiert, [DONE] ignoriert, kaputtes JSON toleriert
 - Mock-Streaming liefert Chunks in korrekter Reihenfolge
 - Kein HTTP-Call bei fehlendem Key
+- HTTP-Fehler (z.B. 401) → httpx.HTTPStatusError propagiert korrekt
+- Timeout → httpx.TimeoutException propagiert korrekt
 - ai_client.py enthält keine requests/urllib-Imports
 - DEFAULT_CONFIG-Werte stimmen mit Spezifikation überein
 

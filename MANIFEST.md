@@ -2,7 +2,7 @@
 
 ## Zweck
 
-Agenten-Setup für Claude Code.
+Agenten-Setup für Claude Code, Codex und opencode.
 
 ## Enthält
 
@@ -13,18 +13,26 @@ Agenten-Setup für Claude Code.
 - .claude/skills/
 - .claude/agents/
 - .claude/hooks/README.md
+- .codex/config.toml.example
+- .codex/agents/
+- opencode.json.example
+- .opencode/commands/
+- .opencode/agents/
+- .agents/skills/
 - docs/
 - prompts/
-- main.py (Scaffold, CLI-Einstieg)
-- app/ (7 Stub-Module: config, scanner, cache, indexer, explainer, ai_client, ui)
-- tests/ (Importierbarkeits- und CLI-Tests)
+- main.py (CLI-Einstieg)
+- app/ (Core-Module: config, scanner, cache, indexer, explainer, ai_client, ui)
+- tests/
 - pyproject.toml, requirements.txt, config.yaml.example
 
 ## Enthält nicht
 
-- kein funktionsfähiges Tool
-- keine Scanner-/Cache-/Indexer-Implementierung
 - keine Textual UI
-- keine LLM-Anbindung
+- keine main.py-Integration für vollständige Nutzerflows
+- keine lokalen persönlichen Codex- oder opencode-Konfigs
+- keine echten API-Keys
+- keine aktiven Hooks
+- kein MCP
 
-Das ist Absicht. Phase 1 ist Scaffold, nicht Funktionalität.
+Das ist Absicht. Tool-spezifische Dateien sind Adapter; `AGENTS.md` bleibt die gemeinsame Wahrheit.

@@ -2,6 +2,8 @@
 
 # CLAUDE.md – Claude-Code-spezifische Regeln
 
+Diese Datei ist nur der Claude-Code-Adapter. Die gemeinsame agentenübergreifende Wahrheit bleibt `AGENTS.md`.
+
 ## Aktueller Zustand
 
 Phase 0–4 sind abgeschlossen.
@@ -14,7 +16,9 @@ Wenn du Code erzeugst, darf das nur nach explizitem Go für eine konkrete Phase 
 
 ## Kontext-Regel
 
-Halte diese Datei kurz. Details liegen in `docs/`, `.claude/rules/`, `.claude/skills/` und `.claude/agents/`.
+Halte diese Datei kurz. Details liegen in `docs/`, `.claude/rules/`, `.claude/skills/`, `.claude/agents/` und `docs/MULTI_AGENT_USAGE.md`.
+
+Wiederverwendbare Workflows sollen zusätzlich agentenneutral in `.agents/skills/` beschrieben werden. Claude-spezifische Skills in `.claude/skills/` bleiben Adapter und dürfen `AGENTS.md` nicht abschwächen.
 
 ## Startverhalten
 

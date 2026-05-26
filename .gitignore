@@ -2,6 +2,17 @@
 CLAUDE.local.md
 .claude/settings.local.json
 
+# Local Codex/opencode runtime config
+.codex/config.toml
+.codex/auth.json
+.codex/log/
+.codex/sessions/
+.codex/tmp/
+opencode.json
+.opencode/log/
+.opencode/cache/
+.opencode/state/
+
 # Secrets
 .env
 .env.*

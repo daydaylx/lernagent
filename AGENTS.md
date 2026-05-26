@@ -21,6 +21,19 @@ RepoTutor soll später Softwareprojekte lokal einlesen und einzelne Dateien vers
 7. Keine Erfolgsmeldung ohne Prüfung.
 8. Kontext sauber halten: große Recherchen über Skills/Subagenten, nicht über endlose Hauptsession.
 
+## Multi-Agent-Architektur
+
+`AGENTS.md` ist die gemeinsame agentenübergreifende Wahrheit für RepoTutor.
+
+Tool-spezifische Dateien sind nur Adapter:
+
+- `CLAUDE.md` und `.claude/` für Claude Code
+- `.codex/` für Codex
+- `opencode.json.example` und `.opencode/` für opencode
+- `.agents/skills/` für agentenneutrale wiederverwendbare Workflows
+
+Adapter dürfen `AGENTS.md` nicht abschwächen. Bei Widersprüchen gilt die strengere Regel.
+
 ## Nicht-Ziele
 
 Nicht bauen, außer ausdrücklich gefordert:

@@ -1,0 +1,27 @@
+# Copy to .codex/config.toml only after trusting this repo.
+# This is an example adapter, not a required local personal config.
+
+approval_policy = "on-request"
+default_permissions = "project-edit"
+web_search = "disabled"
+
+[features]
+multi_agent = true
+hooks = false
+memories = false
+
+[agents]
+max_threads = 3
+max_depth = 1
+
+[permissions.project-edit.filesystem]
+":minimal" = "read"
+
+[permissions.project-edit.filesystem.":workspace_roots"]
+"." = "write"
+
+[permissions.project-edit.network]
+enabled = false
+
+[shell_environment_policy]
+include_only = ["PATH", "HOME"]

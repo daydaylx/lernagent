@@ -25,9 +25,22 @@ Bestanden (Phase 1, 2026-05-25):
 
 ## Gate 2 – Core
 
-Später bestanden, wenn:
+Bestanden, wenn:
 
 - Scanner testbar
 - Cache testbar
 - Indexer testbar
 - Explainer als Prompt-Builder testbar
+
+## Gate 3 – Multi-Agent-Adapter
+
+Bestanden, wenn:
+
+- `AGENTS.md` die gemeinsame agentenübergreifende Wahrheit bleibt
+- `docs/MULTI_AGENT_USAGE.md`, `docs/CODEX_USAGE.md` und `docs/OPENCODE_USAGE.md` existieren
+- `.agents/skills/` mindestens `plan-phase`, `test-audit`, `scope-audit` und `context-reset` enthält
+- `.codex/config.toml.example` und Codex-Subagents existieren
+- `opencode.json.example`, `.opencode/commands/` und `.opencode/agents/repo-reviewer.md` existieren
+- keine echten API-Keys, keine OpenRouter-Integration, kein MCP und keine aktiven Hooks ergänzt wurden
+- `pytest -q` läuft
+- `ruff check .` läuft oder ein fehlendes lokales Tool wird klar als Verifikationslücke gemeldet

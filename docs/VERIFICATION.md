@@ -93,6 +93,37 @@ Geprüft:
 - ai_client.py enthält keine requests/urllib-Imports
 - DEFAULT_CONFIG-Werte stimmen mit Spezifikation überein
 
+## Multi-Agent-Adapter
+
+Prüfen nach Änderungen an `AGENTS.md`, `CLAUDE.md`, `.codex/`, `.opencode/`, `.agents/skills/` oder den Multi-Agent-Dokumenten:
+
+```bash
+git status --short
+pytest -q
+ruff check .
+python -m json.tool opencode.json.example
+python - <<'PY'
+import pathlib
+import tomllib
+
+paths = list(pathlib.Path(".codex").rglob("*.toml"))
+paths += list(pathlib.Path(".codex").rglob("*.toml.example"))
+
+for path in paths:
+    tomllib.loads(path.read_text())
+    print(path)
+PY
+git diff --check
+```
+
+Manuell prüfen:
+
+- `AGENTS.md` bleibt gemeinsame agentenübergreifende Wahrheit.
+- Adapter schwächen `AGENTS.md` nicht ab.
+- `docs/MULTI_AGENT_USAGE.md`, `docs/CODEX_USAGE.md` und `docs/OPENCODE_USAGE.md` verlinken offizielle Quellen.
+- `opencode.json.example` enthält keinen echten API-Key, keinen OpenRouter-Default und keinen `/v1`-Suffix am z.ai Coding-Plan-Endpoint.
+- Keine aktiven Hooks und kein MCP-Setup wurden ergänzt.
+
 ## Keine Scheinerfolge
 
 Nicht akzeptiert:

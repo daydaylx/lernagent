@@ -1,0 +1,70 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "zai-coding/glm-5.1",
+  "provider": {
+    "zai-coding": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Z.AI Coding Plan",
+      "options": {
+        "baseURL": "https://api.z.ai/api/coding/paas/v4",
+        "apiKey": "{env:ZAI_API_KEY}"
+      },
+      "models": {
+        "glm-5.1": {
+          "name": "GLM-5.1"
+        }
+      }
+    }
+  },
+  "permission": {
+    "*": "ask",
+    "read": {
+      "*": "allow",
+      ".env": "deny",
+      ".env.*": "deny",
+      "**/.env": "deny",
+      "**/.env.*": "deny",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      ".env.example": "allow",
+      "*.env.example": "allow",
+      "secrets/**": "deny",
+      "**/secrets/**": "deny",
+      "**/*secret*": "deny",
+      "**/*token*": "deny",
+      "**/*credential*": "deny"
+    },
+    "edit": "ask",
+    "bash": {
+      "*": "ask",
+      "pwd": "allow",
+      "ls *": "allow",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "python --version": "allow",
+      "pytest *": "ask",
+      "ruff check *": "ask",
+      "sudo": "deny",
+      "sudo *": "deny",
+      "git push": "deny",
+      "git push *": "deny",
+      "curl": "deny",
+      "curl *": "deny",
+      "wget": "deny",
+      "wget *": "deny",
+      "cat .env*": "deny",
+      "cat */.env*": "deny",
+      "cat **/.env*": "deny",
+      "printenv": "deny",
+      "printenv *": "deny",
+      "env": "deny",
+      "env *": "deny"
+    },
+    "external_directory": "ask",
+    "task": "ask",
+    "skill": "ask",
+    "webfetch": "ask",
+    "websearch": "ask",
+    "doom_loop": "ask"
+  }
+}

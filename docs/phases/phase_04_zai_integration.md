@@ -1,5 +1,7 @@
 # Phase 04 – z.ai Integration
 
+Status: erledigt (2026-05-25). z.ai GLM 5.1 Streaming-Client ist implementiert und getestet.
+
 ## Ziel
 
 z.ai GLM Coding Plan mit Streaming anbinden.
@@ -23,8 +25,10 @@ api_key_env: ZAI_API_KEY
 - echte API-Aufrufe in Unit-Tests
 - UI als Hauptarbeit
 
-## Erwartete Verifikation
+## Verifikation (bestanden)
 
-- Mock-Streaming funktioniert.
-- fehlender API-Key wird verständlich gemeldet.
-- keine echten API-Calls in Unit-Tests.
+- Mock-Streaming funktioniert. ✓
+- Fehlender API-Key wird verständlich gemeldet. ✓
+- Keine echten API-Calls in Unit-Tests. ✓
+- `pytest -q` → 45 Tests passing (Phase 4). ✓
+- `ruff check .` → clean. ✓

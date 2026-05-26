@@ -15,22 +15,28 @@ Es enthält keine App-Implementierung. Ziel ist, Claude Code vor dem ersten echt
 
 ## Status
 
-Phase 0 – Agenten-Setup: abgeschlossen.
-Phase 1 – Python-Scaffold: abgeschlossen.
+- Phase 0 – Agenten-Setup: abgeschlossen.
+- Phase 1 – Python-Scaffold: abgeschlossen.
+- Phase 2 – Scanner, Cache, Indexer: abgeschlossen.
+- Phase 3 – Explainer / Prompt-Builder: abgeschlossen.
+- Phase 4 – z.ai GLM 5.1 Streaming-Client: abgeschlossen.
+- Multi-Agent-Adapter (Claude Code, Codex, opencode): abgeschlossen.
 
-Vorhandenes: `main.py`, `app/` (7 Stub-Module), `tests/`, `pyproject.toml`, `requirements.txt`.
-Nicht vorhanden: kein funktionsfähiges Tool, keine Scanner-/Indexer-Logik, keine UI, keine LLM-Anbindung.
+Vorhanden: `main.py`, `app/scanner.py`, `app/cache.py`, `app/indexer.py`, `app/explainer.py`, `app/ai_client.py`, `app/config.py`, `tests/` (45 passing), `pyproject.toml`, `requirements.txt`, Multi-Agent-Adapter-Dateien.
 
-## Ziel des späteren Projekts
+Nicht vorhanden: keine Textual UI, kein vollständiger `main.py`-Nutzerflow, kein YAML-Config-Parsing.
 
-RepoTutor soll ein privates lokales Lernwerkzeug werden, das Softwareprojekte einliest und Dateien in einfacher deutscher Sprache erklärt.
+Nächste Phase: Phase 5 – Textual TUI, erst nach explizitem UI-Richtungsentscheid (siehe `docs/DECISION_POLICY.md` und `docs/phases/phase_05_tui.md`).
 
-## Erster Prompt
+## Ziel des Projekts
+
+RepoTutor ist ein privates lokales Lernwerkzeug, das Softwareprojekte einliest und Dateien in einfacher deutscher Sprache erklärt.
+
+## Startprompt für neue Sessions
 
 ```text
-Lies CLAUDE.md, AGENTS.md, docs/FIRST_SESSION.md und docs/PROJECT_BRIEF.md.
-Fasse zusammen, was du verstanden hast.
-Erstelle danach nur einen Plan für Phase 1.
+Lies CLAUDE.md, AGENTS.md, docs/FIRST_SESSION.md.
+Fasse zusammen: aktueller Phasenstand, was vorhanden ist, was noch fehlt.
 Ändere noch keine Dateien.
 ```
 

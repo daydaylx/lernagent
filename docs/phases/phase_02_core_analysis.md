@@ -1,5 +1,7 @@
 # Phase 02 – Core-Analyse
 
+Status: erledigt (2026-05-25). Scanner, Cache und Indexer sind implementiert und getestet.
+
 ## Ziel
 
 Scanner, Cache und Indexer testbar machen.
@@ -19,9 +21,10 @@ Scanner, Cache und Indexer testbar machen.
 - Provider-Auswahl
 - Codeänderungen in analysierten Projekten
 
-## Erwartete Verifikation
+## Verifikation (bestanden)
 
-- Scanner ignoriert Müllordner.
-- Cache erkennt Dateiänderungen.
-- Indexer erkennt einfache Imports/Exports.
-- Tests laufen.
+- Scanner ignoriert Müllordner. ✓
+- Cache erkennt Dateiänderungen. ✓
+- Indexer erkennt einfache Imports/Exports. ✓
+- `pytest -q` → 23 Tests passing (Phase 2). ✓
+- `ruff check .` → clean. ✓

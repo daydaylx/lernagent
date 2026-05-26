@@ -2,7 +2,11 @@
 
 Diese Prompts sind für Claude Code gedacht. Sie sollen verhindern, dass der Agent zu breit baut.
 
-## Prompt 1 – Verstehen und planen
+## Archiv – Phasen 1–4 (erledigt)
+
+Die Prompts 1–5 beziehen sich auf Phasen 1–4, die abgeschlossen sind. Sie bleiben hier als Referenz.
+
+## Prompt 1 – Verstehen und planen (Phase 1, erledigt)
 
 ```text
 Lies diese Dateien:
@@ -24,7 +28,7 @@ Erstelle danach nur einen Plan für Phase 1.
 Ändere noch keine Dateien.
 ```
 
-## Prompt 2 – Plan streng prüfen
+## Prompt 2 – Plan streng prüfen (Phase 1, erledigt)
 
 ```text
 Prüfe deinen Phase-1-Plan streng gegen:
@@ -45,7 +49,7 @@ Liefere danach eine korrigierte Fassung des Plans.
 Ändere noch keine Dateien.
 ```
 
-## Prompt 3 – Go für Phase 1
+## Prompt 3 – Go für Phase 1 (erledigt)
 
 ```text
 Go für Phase 1.
@@ -77,7 +81,7 @@ Berichte:
 - nächster sinnvoller Schritt
 ```
 
-## Prompt 4 – Nachkontrolle
+## Prompt 4 – Nachkontrolle (Phase 1, erledigt)
 
 ```text
 Nutze den Skill test-audit.
@@ -96,14 +100,27 @@ Suche besonders nach:
 Liefere konkrete Fixes, aber ändere noch keine Dateien.
 ```
 
-## Prompt 5 – Phase 2 planen
+## Prompt 5 – Phase 2 planen (erledigt)
 
-Erst nach abgeschlossener Phase 1:
+Phasen 2–4 sind abgeschlossen.
+
+## Prompt 6 – Phase 5 vorbereiten (Decision Gate zuerst)
+
+Erst nach abgeschlossenen Phasen 1–4 (bereits erfüllt). Phase 5 erfordert vorher einen UI-Richtungsentscheid.
 
 ```text
-Lies docs/BUILD_PLAN.md und docs/phases/phase_02_core_analysis.md.
-Plane Phase 2: Scanner, Cache und Indexer.
+Lies docs/phases/phase_05_tui.md und docs/DECISION_POLICY.md.
+Prüfe, ob alle UI-Entscheidungspunkte aus dem Decision Gate geklärt sind.
+Wenn nicht: erstelle einen UI-Optionsvorschlag (2–3 Varianten mit Vor-/Nachteilen, Empfehlung, konkrete Frage).
 Ändere noch keine Dateien.
+```
+
+Erst nach explizitem UI-Richtungsentscheid:
+
+```text
+Go für Phase 5.
+Setze ausschließlich um, was in docs/phases/phase_05_tui.md beschrieben ist.
+Keine neue Provider-Architektur, kein Packaging.
 ```
 
 ## Prompts, die nicht genutzt werden sollten

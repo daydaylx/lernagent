@@ -34,6 +34,8 @@ Nicht enthalten:
 
 ## Phase 1 – Python-Scaffold
 
+Status: erledigt (2026-05-25).
+
 Ziel:
 
 Erzeuge die minimale Python-Projektstruktur.
@@ -85,6 +87,8 @@ Definition of Done:
 - Doku behauptet nicht, dass das Tool schon fertig ist
 
 ## Phase 2 – Scanner, Cache, Indexer
+
+Status: erledigt (2026-05-25).
 
 Ziel:
 
@@ -171,6 +175,8 @@ Tests müssen prüfen:
 
 ## Phase 3 – Explainer als Prompt-Builder
 
+Status: erledigt (2026-05-25).
+
 Ziel:
 
 Prompt-Building ohne echte API.
@@ -205,6 +211,8 @@ Große Dateien:
 - über 80 KB Warnung und nur Struktur/Imports
 
 ## Phase 4 – z.ai GLM 5.1 + Streaming
+
+Status: erledigt (2026-05-25).
 
 Ziel:
 
@@ -322,16 +330,19 @@ Nicht machen:
 
 ## Nächster sinnvoller Claude-Code-Prompt
 
+Phasen 0–4 sind abgeschlossen. Vor Phase 5 muss das Decision Gate aus `docs/phases/phase_05_tui.md` beantwortet sein.
+
 ```text
-Lies CLAUDE.md, AGENTS.md, docs/CONCEPT.md, docs/BUILD_PLAN.md und docs/phases/phase_01_agent_to_scaffold.md.
-Erstelle einen konkreten Plan für Phase 1.
+Lies docs/phases/phase_05_tui.md und docs/DECISION_POLICY.md.
+Prüfe, ob alle UI-Entscheidungspunkte aus dem Decision Gate geklärt sind.
+Wenn nicht: erstelle einen UI-Optionsvorschlag (2–3 Varianten, Vor-/Nachteile, Empfehlung, konkrete Frage).
 Ändere noch keine Dateien.
 ```
 
-Danach erst nach Prüfung:
+Danach erst nach UI-Richtungsentscheid und explizitem Go:
 
 ```text
-Go für Phase 1.
-Setze nur docs/phases/phase_01_agent_to_scaffold.md und docs/BUILD_PLAN.md Phase 1 um.
-Keine UI, keine echte LLM-API, kein Streaming, kein Packaging.
+Go für Phase 5.
+Setze nur docs/phases/phase_05_tui.md um.
+Keine neue Provider-Architektur, kein Packaging.
 ```

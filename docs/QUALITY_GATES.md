@@ -25,22 +25,34 @@ Bestanden (Phase 1, 2026-05-25):
 
 ## Gate 2 – Core
 
-Bestanden, wenn:
+Bestanden (Phase 2–3, 2026-05-25):
 
-- Scanner testbar
-- Cache testbar
-- Indexer testbar
-- Explainer als Prompt-Builder testbar
+- Scanner testbar ✓
+- Cache testbar ✓
+- Indexer testbar ✓
+- Explainer als Prompt-Builder testbar ✓
+- `pytest -q` → 34 Tests passing (nach Phase 3) ✓
+- `ruff check .` → clean ✓
 
 ## Gate 3 – Multi-Agent-Adapter
 
+Bestanden (Multi-Agent-Adapter, 2026-05-26):
+
+- `AGENTS.md` die gemeinsame agentenübergreifende Wahrheit bleibt ✓
+- `docs/MULTI_AGENT_USAGE.md`, `docs/CODEX_USAGE.md` und `docs/OPENCODE_USAGE.md` existieren ✓
+- `.agents/skills/` enthält `plan-phase`, `test-audit`, `scope-audit`, `context-reset`, `review-plan`, `phase-implementation` ✓
+- `.codex/config.toml.example` und Codex-Subagents existieren ✓
+- `opencode.json.example`, `.opencode/commands/` und `.opencode/agents/repo-reviewer.md` existieren ✓
+- keine echten API-Keys, keine OpenRouter-Integration, kein MCP und keine aktiven Hooks ergänzt ✓
+- `pytest -q` → 45 Tests passing ✓
+- `ruff check .` → clean ✓
+
+## Gate 4 – UI-Entscheidungstor
+
 Bestanden, wenn:
 
-- `AGENTS.md` die gemeinsame agentenübergreifende Wahrheit bleibt
-- `docs/MULTI_AGENT_USAGE.md`, `docs/CODEX_USAGE.md` und `docs/OPENCODE_USAGE.md` existieren
-- `.agents/skills/` mindestens `plan-phase`, `test-audit`, `scope-audit` und `context-reset` enthält
-- `.codex/config.toml.example` und Codex-Subagents existieren
-- `opencode.json.example`, `.opencode/commands/` und `.opencode/agents/repo-reviewer.md` existieren
-- keine echten API-Keys, keine OpenRouter-Integration, kein MCP und keine aktiven Hooks ergänzt wurden
-- `pytest -q` läuft
-- `ruff check .` läuft oder ein fehlendes lokales Tool wird klar als Verifikationslücke gemeldet
+- `docs/DECISION_POLICY.md` existiert
+- `.claude/rules/08-ui-decisions.md` existiert
+- `docs/phases/phase_05_tui.md` mit Decision Gate existiert
+- alle offenen UI-Richtungsfragen aus phase_05_tui.md vom Nutzer beantwortet wurden
+- Phase 5 wurde noch nicht implementiert
